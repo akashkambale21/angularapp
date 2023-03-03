@@ -1,0 +1,120 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1 class="ak">
+    Welcome to {{ title }} {{ name}}!
+  </h1>
+  
+  <!-- <h1>Empcount:{{empcount}}</h1>
+  <h1>
+    <h5> Name:{{data.name}}
+      <br>
+      Class:{{data.calss}}
+    </h5>
+    <h3>Current Time:{{ currenttime}}</h3>
+    <app-demo></app-demo>
+  </h1>
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+</div>
+<h2>Here are some links to help you start: </h2>
+<ul>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
+  </li>
+</ul>
+<button type="button" class="btn btn-outline-success">Success</button>
+<button type="button" class="btn btn-outline-danger">Danger</button>
+<app-test2></app-test2>
+<h1><div>Test</div></h1>
+<h2><div>test test</div></h2>
+<img [src]="imageUrl" alt="">
+
+<router-outlet></router-outlet>
+<app-card [title]="posts[0].title" [content]="posts[0].content"></app-card>
+<app-card [title]="posts[1].title" [content]="posts[1].content"></app-card>
+<button (click)="testnew()">save</button>
+<app-test2 [child]=" parantToChild"></app-test2>
+
+<app-ng-for></app-ng-for>
+<app-countrystate-drop></app-countrystate-drop>
+<p appCustom > Hi Akash Kamble</p> -->
+<!-- <app-templateform></app-templateform> -->
+
+<!-- <app-reactiveform></app-reactiveform> -->
+<!-- <app-reactiveform></app-reactiveform> -->
+<!-- <app-reactiveform></app-reactiveform> -->
+<!-- <app-demo></app-demo> -->
+<!-- <app-reactiveform></app-reactiveform> -->
+<!-- <app-reactiveform></app-reactiveform>
+<ng-container *ngFor="let product of products">
+  Product Name : <strong class="text-success">{{product.name}}</strong>
+  Product Id : <strong class="text-success">{{product.id}}</strong>
+  
+  </ng-container> -->
+  <!-- <app-calculator-app></app-calculator-app> -->
+  <ul>
+    <li *ngFor="let user of Users">
+      {{user.id}}
+      {{user.name}}
+      {{user.email}}
+      {{user.phone}}
+      {{user.website}}
+      {{user.company.name}}
+      {{user.address.city}}
+    </li>
+  </ul>
+  <table mat-table [dataSource]="getUsers">
+  
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let user">{{user.id}}</td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let user">{{user.name}}</td>
+    </ng-container>
+  
+    <!-- Email Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let user">{{user.email}}</td>
+    </ng-container>
+  
+    <!-- Phone Column -->
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef>Phone</th>
+      <td mat-cell *matCellDef="let user">{{user.phone}}</td>
+    </ng-container>
+  
+    <!-- Website Column -->
+    <ng-container matColumnDef="website">
+      <th mat-header-cell *matHeaderCellDef>Website</th>
+      <td mat-cell *matCellDef="let user">{{user.website}}</td>
+    </ng-container>
+  
+    <!-- Company Column -->
+    <ng-container matColumnDef="company">
+      <th mat-header-cell *matHeaderCellDef>Company</th>
+      <td mat-cell *matCellDef="let user">{{user.company.name}}</td>
+    </ng-container>
+  
+    <!-- City Column -->
+    <ng-container matColumnDef="city">
+      <th mat-header-cell *matHeaderCellDef>City</th>
+      <td mat-cell *matCellDef="let user">{{user.address.city}}</td>
+    </ng-container>
+  
+
+    <!-- Table Rows -->
+    <tr mat-header-row *matHeaderRowDef="['id', 'name', 'email', 'phone', 'website', 'company', 'city']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['id', 'name', 'email', 'phone', 'website', 'company', 'city']"></tr>
+  
+  </table>
